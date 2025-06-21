@@ -1,0 +1,26 @@
+{
+  "name": "releasify",
+  "displayName": "Releasify",
+  "version": "0.0.0",
+  "description": "Send GitHub release updates to Discord",
+  "main": "index.js",
+  "repository": "https://github.com/TenEplaysOfficial/releasify.git",
+  "author": {
+    "name": "Sriman",
+    "email": "136729116+TenEplaysOfficial@users.noreply.github.com"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/TenEplaysOfficial"
+  },
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "esbuild index.js --bundle --platform=node --minify --outfile=dist/index.js",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.5",
+    "release-it": "^19.0.3"
+  }
+}

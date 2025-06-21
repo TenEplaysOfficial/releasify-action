@@ -1,0 +1,50 @@
+name: "Releasify"
+description: "Send rich GitHub release announcements to Discord using a webhook."
+author: "Sriman"
+inputs:
+  webhook:
+    description: "Discord webhook URL to send the release announcement."
+    required: true
+  title:
+    description: "Custom title for the Discord embed (optional)"
+    required: false
+  footer:
+    description: "Custom footer text (optional)"
+    required: false
+  username:
+    description: "Username to appear in the Discord message (optional)"
+    required: false
+  avatar_url:
+    description: "Custom avatar URL for the Discord message (optional)"
+    required: false
+  color:
+    description: "Color of the embed in hexadecimal format (optional, default is #7289da)"
+    required: false
+    default: "#7289da"
+  mention:
+    description: "Mention @here, @everyone, or role ID (e.g. <@&123456789>)"
+    required: false
+  thumbnail:
+    description: "URL of an image to show as thumbnail in the embed"
+    required: false
+  image:
+    description: "URL of an image to display in the embed body"
+    required: false
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
+  env:
+    webhook: ${{ inputs.webhook }}
+    title: ${{ inputs.title }}
+    footer: ${{ inputs.footer }}
+    username: ${{ inputs.username }}
+    avatar_url: ${{ inputs.avatar_url }}
+    color: ${{ inputs.color }}
+    mention: ${{ inputs.mention }}
+    thumbnail: ${{ inputs.thumbnail }}
+    image: ${{ inputs.image }}
+
+branding:
+  icon: "package"
+  color: "purple"

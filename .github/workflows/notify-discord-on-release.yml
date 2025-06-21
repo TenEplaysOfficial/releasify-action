@@ -1,0 +1,16 @@
+name: Notify Discord on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  notify-discord:
+    name: Send Discord Notification
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Notify Discord via Releasify
+        uses: teneplaysofficial/releasify@v1
+        with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
