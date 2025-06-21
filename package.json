@@ -1,7 +1,7 @@
 {
   "name": "releasify",
   "displayName": "Releasify",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Send GitHub release updates to Discord",
   "main": "index.js",
   "repository": "https://github.com/TenEplaysOfficial/releasify.git",
