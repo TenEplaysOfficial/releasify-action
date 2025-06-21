@@ -1,10 +1,10 @@
 {
-  "name": "releasify",
-  "displayName": "Releasify",
+  "name": "releasify-action",
+  "displayName": "Releasify Action",
   "version": "1.0.0",
   "description": "Send GitHub release updates to Discord",
   "main": "index.js",
-  "repository": "https://github.com/TenEplaysOfficial/releasify.git",
+  "repository": "https://github.com/TenEplaysOfficial/releasify-action.git",
   "author": {
     "name": "Sriman",
     "email": "136729116+TenEplaysOfficial@users.noreply.github.com"
@@ -20,6 +20,7 @@
     "release": "release-it"
   },
   "devDependencies": {
+    "archiver": "^7.0.1",
     "esbuild": "^0.25.5",
     "release-it": "^19.0.3"
   }

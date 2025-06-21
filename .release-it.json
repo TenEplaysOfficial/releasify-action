@@ -10,10 +10,11 @@
     "publish": false
   },
   "github": {
-    "release": true,
-    "assets": "dist/**"
+    "release": true
   },
   "hooks": {
-    "before:init": "yarn build"
+    "before:init": "yarn build && node scripts/zip.js",
+    "before:commit": "git add .",
+    "after:release": "git tag -f v${version.major} && git push -f origin v${version.major}"
   }
 }

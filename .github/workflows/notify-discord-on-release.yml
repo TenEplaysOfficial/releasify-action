@@ -11,6 +11,6 @@ jobs:
 
     steps:
       - name: Notify Discord via Releasify
-        uses: teneplaysofficial/releasify@v1
+        uses: teneplaysofficial/releasify-action@v1
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}

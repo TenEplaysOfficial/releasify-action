@@ -1,4 +1,4 @@
-# Releasify
+# Releasify Action
 
 **Send rich, beautiful GitHub release announcements to Discord — automatically.**
 
@@ -16,7 +16,7 @@ Add this to your GitHub Actions workflow:
 
 ```yaml
 - name: Notify Discord
-  uses: teneplaysofficial/releasify@v1
+  uses: teneplaysofficial/releasify-action@v1
   with:
     webhook: ${{ secrets.DISCORD_WEBHOOK }}
     title: "🚀 New Release!"
