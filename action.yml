@@ -1,4 +1,4 @@
-name: "Releasify"
+name: "Releasify Action"
 description: "Send rich GitHub release announcements to Discord using a webhook."
 author: "Sriman"
 inputs:
