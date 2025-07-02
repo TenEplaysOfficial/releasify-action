@@ -1,4 +1,5 @@
 const https = require("https");
+const core = require("@actions/core");
 
 // GitHub metadata
 const github = JSON.parse(process.env.GITHUB_EVENT || "{}");
@@ -17,19 +18,21 @@ const authorProfile = author.html_url || `https://github.com/${authorName}`;
 const authorAvatar =
   author.avatar_url || "https://github.githubassets.com/favicons/favicon.png";
 
-// Input environment variables
-const webhook = process.env.webhook;
-const title = process.env.title || `🚀 New Release: \`${tag}\` in \`${repo}\``;
-const footer = process.env.footer || repo;
+// Input variables
+const webhook = core.getInput("webhook");
+const title =
+  core.getInput("title") || `🚀 New Release: \`${tag}\` in \`${repo}\``;
+const footer = core.getInput("footer") || repo;
 const username =
-  process.env.username || repo.split("/")[1]?.[0]?.toUpperCase() + "Bot";
+  core.getInput("username") || repo.split("/")[1]?.[0]?.toUpperCase() + "Bot";
 const avatar_url =
-  process.env.avatar_url ||
+  core.getInput("avatar_url") ||
   "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png";
-const color = parseInt((process.env.color || "7289da").replace(/^#/, ""), 16);
-const mention = process.env.mention || "";
-const thumbnail = process.env.thumbnail;
-const image = process.env.image;
+const colorHex = core.getInput("color") || "7289da";
+const color = parseInt(colorHex.replace(/^#/, ""), 16);
+const mention = core.getInput("mention") || "";
+const thumbnail = core.getInput("thumbnail");
+const image = core.getInput("image");
 
 // Source code links
 const zip = release.zipball_url || `https://github.com/${repo}/zipball/${tag}`;
