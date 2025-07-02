@@ -4,7 +4,7 @@
     "tag": true,
     "commitMessage": "chore: release v${version}",
     "tagName": "v${version}",
-    "requireCleanWorkingDir": true
+    "requireCleanWorkingDir": false
   },
   "npm": {
     "publish": false
