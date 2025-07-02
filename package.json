@@ -16,12 +16,14 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "test": "jest",
     "build": "esbuild index.js --bundle --platform=node --minify --outfile=dist/index.js",
     "release": "release-it"
   },
   "devDependencies": {
     "archiver": "^7.0.1",
     "esbuild": "^0.25.5",
+    "jest": "^30.0.3",
     "release-it": "^19.0.3"
   },
   "dependencies": {
